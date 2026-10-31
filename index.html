@@ -220,6 +220,38 @@
                 </a>
             </div>
 
+        <!-- Banner Ad Section -->
+        <div id="ad-wrapper" class="flex justify-center my-4">
+            <div id="ad-container" style="width:320px;height:50px;"></div>
+        </div>
+
+        <script>
+            (function() {
+                var container = document.getElementById('ad-container');
+                if (!container) return;
+
+                // Set global options first
+                window.atOptions = {
+                    'key' : '899891ad3f03dc006912803759785ad9',
+                    'format' : 'iframe',
+                    'height' : 50,
+                    'width' : 320,
+                    'params' : {}
+                };
+
+                // Dynamically create and execute the first inline script (options)
+                var inlineScript = document.createElement('script');
+                inlineScript.text = "atOptions = " + JSON.stringify(window.atOptions) + ";";
+                container.appendChild(inlineScript);
+
+                // Dynamically create and execute the external Adsterra script
+                var adScript = document.createElement('script');
+                adScript.src = "https://bicea.org/22/899891ad3f03dc006912803759785ad9";
+                adScript.async = true;
+                container.appendChild(adScript);
+            })();
+        </script>
+
     </main>
 
     <script>
